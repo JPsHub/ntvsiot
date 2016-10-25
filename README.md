@@ -82,7 +82,7 @@ Unsupported
 console.* will output messages to the Visual Studio output window. The `--debug` option needs to be passed to node for this to work.
 You can also use the `--use-logger` option to redirect console output to a file in the 
 [local storage path](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.applicationdata.localfolder.aspx) of the application 
-(C:\Data\Users\DefaultAccount\AppData\Local\Packages\&lt;Your Project Name&gt;_&lt;Publisher Hash String&gt;\LocalState\nodeuwp.log).
+(C:\Data\Users\DefaultAccount\AppData\Local\Packages\\&lt;Your Project Name&gt;_&lt;Publisher Hash String&gt;\LocalState\nodeuwp.log).
 
 ####Debugger 
 Unsupported. For debugging, the Visual Studio JavaScript debugger is used.
