@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:bal="http://schemas.microsoft.com/wix/BalExtension">
 	
-	<Bundle Name="Node.js Tools for UWP Apps" Version="$(env.NodejsToolsBundleVer)" Manufacturer="Microsoft Corporation" UpgradeCode="0DB0A3E0-3865-4358-A120-0588422A1ABE" IconSourceFile="..\Icons\NodeJS.ico">
+	<Bundle Name="Node.js Tools for UWP Apps (VS 2017)" Version="$(env.NodejsToolsBundleVer)" Manufacturer="Microsoft Corporation" UpgradeCode="A0D480B9-0872-43E7-8D0E-4F8DFAA3BCCE" IconSourceFile="..\Icons\NodeJS.ico">
 
 	<BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense">
 		<bal:WixStandardBootstrapperApplication 
@@ -13,10 +13,8 @@
     </BootstrapperApplicationRef>	
 	
     <Chain>
-      <MsiPackage Id="NodejsChakraCoreInstallerx86" InstallCondition='NOT VersionNT64' SourceFile="$(env.NodejsToolsBundleRelDir)\node-chakra-x86.msi" Vital="yes" DisplayInternalUI="yes" Visible="yes" ForcePerMachine="yes"/>
-      <MsiPackage Id="NodejsChakraCoreInstallerx64" InstallCondition='VersionNT64' SourceFile="$(env.NodejsToolsBundleRelDir)\node-chakra-x64.msi" Vital="yes" DisplayInternalUI="yes" Visible="yes" ForcePerMachine="yes"/>
-      <RollbackBoundary />
-	  <MsiPackage Id="NTVSBaseInstaller" SourceFile="$(env.NodejsToolsBundleRelDir)\NTVS.msi" Vital="yes" DisplayInternalUI="no" Visible="yes"/>
+      <MsiPackage Id="NodejsChakraInstallerx86" InstallCondition='NOT VersionNT64' SourceFile="$(env.NodejsToolsBundleRelDir)\node-chakra-x86.msi" Vital="yes" DisplayInternalUI="yes" Visible="yes" ForcePerMachine="yes"/>
+      <MsiPackage Id="NodejsChakraInstallerx64" InstallCondition='VersionNT64' SourceFile="$(env.NodejsToolsBundleRelDir)\node-chakra-x64.msi" Vital="yes" DisplayInternalUI="yes" Visible="yes" ForcePerMachine="yes"/>
       <RollbackBoundary />
       <MsiPackage Id="NTVSIoTExtensionInstaller" SourceFile="$(env.NodejsToolsBundleRelDir)\NTVSUWPExtension.msi" Vital="yes" DisplayInternalUI="no" Visible="yes"/>
     </Chain>

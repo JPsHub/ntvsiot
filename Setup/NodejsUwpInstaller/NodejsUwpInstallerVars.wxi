@@ -7,6 +7,13 @@
     <?define Comp_InstallDirItemGuid=9DDECEC2-C0A1-4D30-8DF5-3A9A6401DB18?>
     <?define Comp_ProgramMenuFolder=C43EEE9B-7448-4D5C-BDE6-55DAF3F02A98?>
     <?define NTVSDev14Guid=08FBC8DA-20FB-4E06-A4CE-2FBC02349C58?>
+  <?elseif "$(var.VSTargetVersion)" = "15.0" ?>
+    <?define InstallerUpgradeGuid=BDB5223A-2C6C-4415-94FD-07E3A38DC665?>  
+    <?define Comp_InstallLocationGuid=5024A992-B681-4405-96EA-6B08C8126A26?>
+    <?define Comp_AllUserInstallDirItemGuid=7E00A2CB-6EF2-4F9D-AAF5-256091531FDB?>
+    <?define Comp_InstallDirItemGuid=9DDECEC2-C0A1-4D30-8DF5-3A9A6401DB18?>
+    <?define Comp_ProgramMenuFolder=C43EEE9B-7448-4D5C-BDE6-55DAF3F02A98?>
+    <?define NTVSDev15Guid=C0603A78-ED89-4A0B-964A-DC24FC7303EE?>
   <?else?>
     <!--Unknown VS version, We'll insert a bunch of bogus values such that Wix will error out-->
     <!--  To fix this define a new section above for the new VS version.  Leave this such that future new versions continue to crash on build-->

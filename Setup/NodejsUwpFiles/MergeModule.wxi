@@ -32,29 +32,6 @@
     <Substitution Table="Directory" Row="Dir_$(var.key)Extensions" Column="Directory_Parent" Value="[=Config_$(var.key)ExtensionsParent]"/>
     <Substitution Table="Directory" Row="Dir_$(var.key)Templates" Column="Directory_Parent" Value="[=Config_$(var.key)TemplatesParent]"/>
 
-    <DirectoryRef Id="Dir_$(var.key)Templates">
-        <Directory Id="Dir_$(var.key)AllProjectTemplates" Name="ProjectTemplates">
-            <Directory Id="Dir_$(var.key)JavaScriptProjectTemplates" Name="JavaScript">
-                <Directory Id="Dir_$(var.key)ProjectTemplates" Name="Node.js">
-                    <Directory Id="Dir_$(var.key)WebProjectTemplates" Name="Web" />
-                </Directory>
-            </Directory>
-        </Directory>
-        <Directory Id="Dir_$(var.key)AllItemTemplates" Name="ItemTemplates">
-            <Directory Id="Dir_$(var.key)ItemTemplates" Name="JavaScript" />
-            <Directory Id="Dir_$(var.key)ItemTemplates_CloudService" Name="CloudService">
-                <Directory Id="Dir_$(var.key)ItemTemplates_CloudService_NETFramework4" Name="NETFramework4">
-                    <Directory Id="Dir_$(var.key)ItemTemplates_CloudService_NETFramework4_WebRole" Name="Web Role">
-                        <Directory Id="Dir_$(var.key)ItemTemplates_CloudService_WebRole" Name="Node.js" />
-                    </Directory>
-                    <Directory Id="Dir_$(var.key)ItemTemplates_CloudService_NETFramework4_WorkerRole" Name="Worker Role">
-                        <Directory Id="Dir_$(var.key)ItemTemplates_CloudService_WorkerRole" Name="Node.js" />
-                    </Directory>
-                </Directory>
-            </Directory>
-        </Directory>
-    </DirectoryRef>
-
     <DirectoryRef Id="Dir_$(var.key)Extensions">
         <Directory Id="Dir_$(var.key)Extensions_Microsoft">
             <?ifdef ProductSuffix?>
@@ -63,7 +40,13 @@
             </Directory>
             <?else?>
             <Directory Id="Dir_$(var.key)InstallLocationParent" Name="Node.js UWP Extension">
-                <Directory Id="Dir_$(var.key)InstallLocation" Name="$(var.ReleaseVersion)" />
+                <Directory Id="Dir_$(var.key)InstallLocation" Name="$(var.ReleaseVersion)">
+                    <Directory Id="Dir_$(var.key)AllProjectTemplates" Name="ProjectTemplates">
+                        <Directory Id="Dir_$(var.key)JavaScriptProjectTemplates" Name="JavaScript">
+                            <Directory Id="Dir_$(var.key)ProjectTemplates" Name="Node.js"/>
+                        </Directory>
+                    </Directory>
+                </Directory>
             </Directory>
             <?endif?>
         </Directory>

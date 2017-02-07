@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WixLocalization Culture="en-us" xmlns="http://schemas.microsoft.com/wix/2006/localization">
   <String Id="Caption">[WixBundleName]</String>
-  <String Id="InstallMessage">This program will install Node.js (Chakra), Node.js Tools for Visual Studio (NTVS), and NTVS UWP Extension</String>
+  <String Id="InstallMessage">This program will install Node.js (Chakra) and NTVS UWP Extension</String>
   <String Id="ConfirmCancelMessage">Are you sure you want to cancel?</String>
   <String Id="InstallAcceptCheckbox">I agree to the license terms and conditions and to the</String>
   <String Id="InstallPrivacyStatement">privacy statement</String>

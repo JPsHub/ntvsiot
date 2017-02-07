@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">15.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <NodechUWPSDKPath Condition="'$(NodechUWPSDKPath)' == ''">$(ProgramFiles)\NodejsUWP</NodechUWPSDKPath>
   </PropertyGroup>
@@ -43,9 +43,6 @@
   <!-- Node.js folders and files that will need to be custom packaged
        into the appx (using CustomOutputGroupForPackaging target) -->
   <ItemGroup>
-    <NodeModulesContentDir Include="$(ProjectHome)\**\*.node"/>
-  </ItemGroup>
-  <ItemGroup>
     <PublicDir Include="$(ProjectHome)\public"/>
   </ItemGroup>
   <ItemGroup>
@@ -61,9 +58,10 @@
     <NodeHostFiles Include="$(ProjectHome)\node_modules.hash"/>
   </ItemGroup>
   
-  <Target Name="BeforeBuild">
+  <Target Name="IncludeNativeNodeModules" BeforeTargets="CoreCompile">
     <ItemGroup>
-      <Content Include="$(ProjectHome)\node_modules\**\*.*" />
+      <NodeModulesContentDir Include="$(ProjectHome)\node_modules\**\*.node"/>
+      <NodeModulesContentDir Include="$(ProjectHome)\node_modules\*.node"/>
     </ItemGroup>
   </Target>
 
@@ -134,7 +132,14 @@
     </AssignTargetPath>
   </Target>
 
-  <Import Project="Microsoft.NodejsTools.targets"/>
+  <PropertyGroup>
+    <VSInstallDir Condition="'$(VSInstallDir)' == ''">$(registry:HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisualStudio\SxS\VS7@15.0)</VSInstallDir>
+    <VSInstallDir Condition="'$(VSInstallDir)' == ''">$(registry:HKEY_CURRENT_USER\SOFTWARE\Microsoft\VisualStudio\SxS\VS7@15.0)</VSInstallDir>
+    <VSInstallDir Condition="'$(VSInstallDir)' == ''">$(registry:HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\VisualStudio\SxS\VS7@15.0)</VSInstallDir>
+    <VSInstallDir Condition="'$(VSInstallDir)' == ''">$(registry:HKEY_CURRENT_USER\SOFTWARE\Wow6432Node\Microsoft\VisualStudio\SxS\VS7@15.0)</VSInstallDir>
+  </PropertyGroup>
+ 
+  <Import Project="$(VSInstallDir)\MSBuild\Microsoft\VisualStudio\v$(VisualStudioVersion)\Node.js Tools\Microsoft.NodejsTools.targets"/>
 
   <PropertyGroup>
     <QualifiedProjectHome>$([System.IO.Path]::GetFullPath($([System.IO.Path]::Combine($(MSBuildProjectDirectory), $(ProjectHome)))))</QualifiedProjectHome>

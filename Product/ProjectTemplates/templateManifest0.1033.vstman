@@ -1,0 +1,78 @@
+﻿<VSTemplateManifest Version="1.0" Locale="1033" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Project">
+    <RelativePathOnDisk>WebServerUwp</RelativePathOnDisk>
+    <TemplateFileName>NodejsUwpWebServer.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Basic Node.js Web Server (Universal Windows)</Name>
+        <Description>Basic 'Hello World' Node.js Web Server (Universal Windows)</Description>
+        <Icon Package="{FE8A8C3D-328A-476D-99F9-2A24B75F8C7F}" ID="406" />
+        <ProjectType>JavaScript</ProjectType>
+        <TemplateID>Microsoft.JavaScript.NodejsUwpWebServer</TemplateID>
+        <SortOrder>125</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>NodejsWebServer</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project">
+    <RelativePathOnDisk>Express4Uwp</RelativePathOnDisk>
+    <TemplateFileName>Express4Uwp.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Basic Node.js Express 4 Application (Universal Windows)</Name>
+        <Description>A basic Node.js Express 4 application based on Universal Windows Platform.</Description>
+        <Icon Package="{FE8A8C3D-328A-476D-99F9-2A24B75F8C7F}" ID="406" />
+        <ProjectType>JavaScript</ProjectType>
+        <TemplateID>Microsoft.JavaScript.Express4Uwp</TemplateID>
+        <SortOrder>140</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>Express4UwpApp</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project">
+    <RelativePathOnDisk>CylonUwp</RelativePathOnDisk>
+    <TemplateFileName>CylonUwp.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Basic Node.js Cylon Application (Universal Windows)</Name>
+        <Description>Basic Node.js Cylon Application (Universal Windows)</Description>
+        <Icon Package="{FE8A8C3D-328A-476D-99F9-2A24B75F8C7F}" ID="406" />
+        <ProjectType>JavaScript</ProjectType>
+        <TemplateID>Microsoft.JavaScript.CylonUwp</TemplateID>
+        <SortOrder>125</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>CylonUwp</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project">
+    <RelativePathOnDisk>JohnnyFiveUwp</RelativePathOnDisk>
+    <TemplateFileName>JohnnyFiveUwp.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Basic Node.js Johnny-Five Application (Universal Windows)</Name>
+        <Description>Basic Node.js Johnny-Five Application (Universal Windows)</Description>
+        <Icon Package="{FE8A8C3D-328A-476D-99F9-2A24B75F8C7F}" ID="406" />
+        <ProjectType>JavaScript</ProjectType>
+        <TemplateID>Microsoft.JavaScript.JohnnyFiveUwp</TemplateID>
+        <SortOrder>125</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>JohnnyFiveUwp</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

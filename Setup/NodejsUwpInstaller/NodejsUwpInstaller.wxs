@@ -10,7 +10,7 @@
 
       <Property Id="NTVS_INSTALLED" Secure="yes" />
       
-      <Upgrade Id="$(var.NTVSDev14Guid)">
+      <Upgrade Id="$(var.NTVSDev15Guid)">
         <UpgradeVersion Property="NTVS_INSTALLED" OnlyDetect="yes" IncludeMaximum="no" Minimum="1.0.10310.0"/>
       </Upgrade>
 
@@ -33,9 +33,10 @@
       <PropertyRef Id="VWDEXPRESS_PATH"/>
       
       <!-- Check for NTVS installation -->
-      <Condition Message="!(loc.NTVSNotInstalled)">
+	  <!-- TODO: Is there a way to check for the NTVS VS 2017 VSIX installation?-->
+      <!--<Condition Message="!(loc.NTVSNotInstalled)">
           NTVS_INSTALLED OR Installed
-      </Condition>
+      </Condition>-->
 
       <!-- This location is the directory that NodejsUwpFiles.msm will install into.
             We use it to reference some installed files. -->

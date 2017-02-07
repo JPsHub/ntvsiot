@@ -53,7 +53,6 @@ namespace Microsoft.NodejsUwp
     [InstalledProductRegistration("#110", "#112", "1.0", IconResourceID = 400)]
     [ProvideObject(typeof(NodejsUwpPropertyPage))]
     [ProvideProjectFactory(typeof(NodejsUwpProjectFactory), null, null, null, null, "ProjectTemplates")]
-    [DefaultRegistryRoot("Software\\Microsoft\\VisualStudio\\14.0")]
     [Guid(GuidList.NodejsUwpPkgString)]
     public sealed class NodejsUwpPackage : Package
     {

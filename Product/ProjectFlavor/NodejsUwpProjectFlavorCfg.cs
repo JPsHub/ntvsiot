@@ -115,7 +115,6 @@ namespace Microsoft.NodejsUwp
                 new VsBootstrapperPackageInfo { PackageName = "62B807E2-6539-46FB-8D67-A73DC9499940" } // ManagedMsVsMon  
             };
             optionalPackagesToDeploy = new VsBootstrapperPackageInfo[] {
-                new VsBootstrapperPackageInfo { PackageName = "FEC73B34-86DE-4EA8-BFF4-3600A0443E9C" }, // NativeMsVsMonDependency  
                 new VsBootstrapperPackageInfo { PackageName = "B968CC6A-D2C8-4197-88E3-11662042C291" }, // XamlUIDebugging  
                 new VsBootstrapperPackageInfo { PackageName = "8CDEABEF-33E1-4A23-A13F-94A49FF36E84" }  // XamlUIDebuggingDependency  
             };

@@ -27,7 +27,6 @@ using System.Linq;
 using System.Windows;
 using Microsoft.VisualStudio.Language.Intellisense;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Microsoft.VisualStudio.Text;
 using TestUtilities;
 using TestUtilities.UI;
 using TestUtilities.NodejsUwp;

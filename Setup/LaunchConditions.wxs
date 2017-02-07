@@ -3,11 +3,9 @@
   <Fragment>
     <!-- The install path properties are set if the path is available. -->
     <Property Id="VSINSTALLPATH" Secure="yes">
-      <RegistrySearch Id="VSInstallDir" Root="HKLM" Key="Software\Microsoft\VisualStudio\$(var.VSTargetVersion)\Setup\VS" Name="ProductDir" Type="directory">
-        <DirectorySearch Id="VSInstallDir_Common7_IDE" Path="Common7\IDE" AssignToProperty="yes" Depth="1">
-          <FileSearch Id="VSInstallDir_Common7_IDE_msenv_dll" Name="msenv.dll"/>
-        </DirectorySearch>
-      </RegistrySearch>
+      <DirectorySearch Id="VSInstallDir" Path="[ProgramFilesFolder]\Microsoft Visual Studio\2017" AssignToProperty="yes" Depth="4">
+        <FileSearch Id="VSInstallDir_Common7_IDE_msenv_dll" Name="msenv.dll"/>
+      </DirectorySearch>
     </Property>
     <!-- The executable path property is set if we can install into the
        specific version that is available. 

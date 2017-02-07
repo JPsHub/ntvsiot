@@ -41,11 +41,9 @@ IntelliSense is available for UWP APIs through the [ES6 Intellisense](https://gi
 
   ![capture](https://cloud.githubusercontent.com/assets/8389594/14468105/227e9760-0093-11e6-98c2-cc4b8dcd05e3.PNG)
 
-To enable IntelliSense in your project:
-* Ensure you have the 'ES6 IntelliSense Preview' option set under `Tools -> Options -> Text Editor -> Node.js -> IntelliSense`
+To enable IntelliSense for UWP API in your project:
 * Right click on your project in the Solution Explorer and select 'Open Command Prompt Here...'
-* Run `npm install typings -g`
-* Run `typings install dt~winrt-uwp --global`
+* Run `npm install @types/winrt-uwp`
 
 
 ##Installing npm packages
@@ -149,7 +147,7 @@ Unsupported
 ##Building and deploying an app package (AppX)
 You have the option to build and deploy your app without using the Visual Studio UI. To do this, follow the instructions below:
 
-* Open Developer Command Prompt for VS 2015.
+* Open Developer Command Prompt for VS 2015 (or 2017).
 * Navigate to your project.
 * Run `msbuild <Your solution name>.sln /p:configuration=release /p:platform=<arm | x86 | x64 >` (use arm for Raspberry Pi 2 or 3 and x86 for MBM or DragonBoard).
 * After running the command above, you should see a new folder with the AppX in: \Your project root\AppPackages.
@@ -222,7 +220,7 @@ to cover all Microsoft OSS projects.
 ##Debugging the Extension
 As a contributor, you can use the steps below to set up your PC to build and debug the code in this repository.
 
-**Prerequisites:** Visual Studio 2015 and Visual Studio 2015 SDK need to be installed.
+**Prerequisites:** Visual Studio 2015 (or 2017) and its SDK need to be installed.
 * Install [Repo root]\Common\Prerequisites\VSTestHost.msi
 * Run [Repo root]\Prerequisites\EnableSkipVerification.reg
 * Uninstall Node.js Tools for UWP Apps if it is installed.
