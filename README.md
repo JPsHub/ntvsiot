@@ -1,4 +1,4 @@
-##Summary
+## Summary
 The NTVS (Node.js Tools for Visual Studio) UWP Extension enables developers to deploy Node.js as a [Universal Windows Platform (UWP) application](https://github.com/ms-iot/node-uwp-wrapper) 
 to Windows 10 IoT Core devices (e.g. Raspberry Pi), Windows 10 Desktop, and Windows 10 Mobile. 
 This extension is written as a [project subtype](https://msdn.microsoft.com/en-us/library/bb166488.aspx) of [NTVS](http://aka.ms/ntvs) and extends some if its functionality like IntelliSense and debugging.
@@ -21,7 +21,7 @@ http.createServer(function (req, res) {
 uwp.close();
 ```
 
-##Try it out!
+## Try it out!
 Follow the instructions [here](https://developer.microsoft.com/en-us/windows/iot/samples/helloworldnode) for the steps to install the required software and to build your first 'Hello World' Node.js server.
 You can also try out the [Blinky sample](https://developer.microsoft.com/en-us/windows/iot/samples/helloblinkynode) which shows the use of UWP APIs inside a Node.js server to toggle an LED on or off.
 
@@ -31,12 +31,12 @@ Other samples to try out:
 * [Send data from a light sensor to Azure](https://developer.microsoft.com/en-us/windows/iot/samples/azuredatauploader)
 
 
-##Deployment to PC and Phone
+## Deployment to PC and Phone
 In order to deploy an app to your PC or Phone, you must first enable Embedded Mode. See [this](https://developer.microsoft.com/en-us/windows/iot/docs/embeddedmode) page for instructions on how to do that.
 You also need to turn on `Developer mode`. This can be done on the `Settings -> Update & Security -> For Developers` page.
 
 
-##Intellisense for UWP API
+## Intellisense for UWP API
 IntelliSense is available for UWP APIs through the [ES6 Intellisense](https://github.com/Microsoft/nodejstools/wiki/ES6-IntelliSense-Preview-in-NTVS-1.1) feature in NTVS 1.2.
 
   ![capture](https://cloud.githubusercontent.com/assets/8389594/14468105/227e9760-0093-11e6-98c2-cc4b8dcd05e3.PNG)
@@ -46,7 +46,7 @@ To enable IntelliSense for UWP API in your project:
 * Run `npm install @types/winrt-uwp`
 
 
-##Installing npm packages
+## Installing npm packages
 Instructions on how to use the NTVS npm UI can be found [here](https://github.com/Microsoft/nodejstools/wiki/npm-Integration).
 If you are installing a native package or a package with native dependencies, there are two options required to target UWP:
 * `--target_arch`: The processor architecture (arm, x86, or x64) of the device the package will be running on
@@ -66,26 +66,26 @@ required before they can build successfully. The serialport fork [here](https://
 can be done.
 
 
-##Unsupported Node.js API
+## Unsupported Node.js API
 Since we are running Node in an UWP app the are a few internal modules/functions that will either work a little differently from what you're used to (i.e. with console node.exe)
 or will be unsupported due to the nature of UWP applications. Anything that is not listed here is expected to work normally.
 
-####Child-Process
+#### Child-Process
 Unsupported
 
-####Cluster
+#### Cluster
 Unsupported
 
-####Console 
+#### Console 
 console.* will output messages to the Visual Studio output window. The `--debug` option needs to be passed to node for this to work.
 You can also use the `--use-logger` option to redirect console output to a file in the 
 [local storage path](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.applicationdata.localfolder.aspx) of the application 
 (C:\Data\Users\DefaultAccount\AppData\Local\Packages\\&lt;Your Project Name&gt;_&lt;Publisher Hash String&gt;\LocalState\nodeuwp.log).
 
-####Debugger 
+#### Debugger 
 Unsupported. For debugging, the Visual Studio JavaScript debugger is used.
 
-####File System
+#### File System
 Read/write permission is automatically granted for accessing files in the [local storage path](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.applicationdata.localfolder.aspx) 
 of your application. You can also read files from the application [install path](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.package.installedlocation.aspx). 
 The storage and install path can be retrieved using `fs.uwpstoragedir`, `fs.uwpstoragedirSync`, `fs.uwpinstalldir`, and `fs.uwpinstalldirSync`. 
@@ -104,14 +104,14 @@ The following fs functions are not supported:
 * `fs.watch`
 * `fs.watchFile`
 
-####OS
+#### OS
 The following os functions are not supported:
 * `os.cpus`
 * `os.homedir`
 * `os.tmpdir`
 * `os.userInfo`
 
-####Process
+#### Process
 The following process functions/properties are not supported:
 * `process.connected`
 * `process.cpuUsage` (bug: this should work using [ProcessCpuUsage](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.diagnostics.processcpuusage.aspx))
@@ -134,17 +134,17 @@ The following process functions/properties are not supported:
 * `process.stdin`
 * `process.umask`
 
-####Readline
+#### Readline
 Unsupported
 
-####REPL
+#### REPL
 Unsupported
 
-####TTY
+#### TTY
 Unsupported
 
 
-##Building and deploying an app package (AppX)
+## Building and deploying an app package (AppX)
 You have the option to build and deploy your app without using the Visual Studio UI. To do this, follow the instructions below:
 
 * Open Developer Command Prompt for VS 2015 (or 2017).
@@ -157,14 +157,14 @@ You have the option to build and deploy your app without using the Visual Studio
 * Run `shutdown /r /t 0` to reboot your device. When the reboot completes, the app will be running.
 
 
-##Long paths
+## Long paths
 Workarounds for the long path limit (MAX_PATH) are listed [here](https://github.com/Microsoft/nodejs-guidelines/blob/master/windows-environment.md#max_path-explanation-and-workarounds).
 If you run into [this error](https://github.com/ms-iot/ntvsiot/issues/80) while deploying to IoT Core, run the commands below to remove the limit.
 * `reg add "HKLM\SYSTEM\CurrentControlSet\Control\FileSystem" /t REG_DWORD /d 1 /v LongPathsEnabled /f`
 * `shutdown /r /t 0` (this just reboots your device)
 
 
-##Referencing winmd files
+## Referencing winmd files
 You can reference a C# or C++ UWP component in your Node.js UWP app by using the Visual Studio reference manager.
 To do this, right click on the `references` node in your project and select `Add Reference...`. This will bring up a dialog which you can use to either:
 * Choose a winmd project (within your solution) to reference in your app.
@@ -198,7 +198,7 @@ console.log(csref.myMethod());
 ```
 
 
-##Creating new issues
+## Creating new issues
 Please follow the guidelines below when creating new issues:
 * Use a descriptive title that identifies the issue to be addressed or the requested feature (e.g., "Feature F should report ABC when XYZ is used in DEF").
 * Provide a detailed description of the issue or request feature.
@@ -208,7 +208,7 @@ Please follow the guidelines below when creating new issues:
     * Specify any relevant exception messages and stack traces.
 	
 
-##Contributing
+## Contributing
 The NTVS UWP Extension code is covered by the [MIT license](http://opensource.org/licenses/MIT). There is no formal style-guide, but contributors should try to match the style of the file they are editing. 
 Feel free to reach out if you need a hand in starting to tackle an issue. For new functionality, please contact us first so we can coordinate efforts (e.g. to avoid duplication of work, roadmap fit, etc.).
 Since this code is under the MIT license, all contributions will be made under that license as well. Please don’t submit anything with any other licensing statements. If you want to make a contribution 
@@ -217,7 +217,7 @@ from your employer if applicable. You must sign the [Microsoft Contributor Licen
 to cover all Microsoft OSS projects.
 
 
-##Debugging the Extension
+## Debugging the Extension
 As a contributor, you can use the steps below to set up your PC to build and debug the code in this repository.
 
 **Prerequisites:** Visual Studio 2015 (or 2017) and its SDK need to be installed.
